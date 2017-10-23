@@ -78,10 +78,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FadeIn.cs" />
-    <Compile Include="Assets\MusicManager.cs" />
     <Compile Include="Assets\Scripts\BackgroundMusic.cs" />
+    <Compile Include="Assets\Scripts\FadeIn.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\ParticleAutoDestroy.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
   </ItemGroup>
