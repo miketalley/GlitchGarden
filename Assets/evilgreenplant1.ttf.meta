@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 287a28baacdaff04f8e48b2e833bb109
+timeCreated: 1508691531
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Evil Green Plant
+  fontNames:
+  - Evil Green Plant
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

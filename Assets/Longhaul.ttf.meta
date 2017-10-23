@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b7e298a4ad5eb994793cfb4083c2d39c
+timeCreated: 1508689729
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Longhaul
+  fontNames:
+  - Longhaul
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
