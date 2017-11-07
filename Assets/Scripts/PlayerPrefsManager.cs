@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerPrefsManager : MonoBehaviour {
-
     const string MASTER_VOLUME_KEY = "master_volume";
     const string DIFFICULTY_KEY = "difficulty";
     const string LEVEL_KEY = "level_unlocked_";
-    // level_unlocked_1
 
     public static void SetMasterVolume(float volume)
     {
-        if (volume > 0f && volume < 1f)
+        if (volume >= 0f && volume <= 1f)
         {
             PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
         }
         else
         {
-            Debug.LogError("Master volume out of range");
+            Debug.LogError("Master volume out of range: " + volume.ToString());
         }
     }
 
@@ -35,7 +34,7 @@ public class PlayerPrefsManager : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("Trying to unlock level not in build order");
+            Debug.LogError("Trying to unlock level not in build order: " + level);
         }
     }
 
@@ -47,14 +46,14 @@ public class PlayerPrefsManager : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("Level query was out of range of existing levels");
+            Debug.LogError("Level query was out of range of existing levels: " + level);
             return false;
         }
     }
 
     public static void SetDifficulty(float difficulty)
     {
-        if (difficulty > 0f && difficulty < 1f)
+        if (difficulty > 0f && difficulty <= 3f)
         {
             PlayerPrefs.SetFloat(DIFFICULTY_KEY, difficulty);
         }

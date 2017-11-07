@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class MusicManager : MonoBehaviour {
-    public bool musicIsMuted = false;
     public AudioClip[] levelMusic;
 
     private AudioSource audioSource;
@@ -20,44 +19,13 @@ public class MusicManager : MonoBehaviour {
     private void Start ()
     {
         audioSource = this.GetComponent<AudioSource>();
+        SetVolume(PlayerPrefsManager.GetMasterVolume());
+        SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
-    public bool OnEnable ()
+    public void SetVolume(float volume)
     {
-        if (currentClip != null)
-        {
-            PlayClip(currentClip);
-        }
-        else
-        {
-            PlaySceneMusicByIndex(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        musicIsMuted = false;
-
-        return musicIsMuted;
-    }
-
-    public bool OnDisable ()
-    {
-        audioSource.Stop();
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        musicIsMuted = true;
-
-        return musicIsMuted;
-    }
-
-    public bool ToggleMusic ()
-    {
-        if (musicIsMuted)
-        {
-            return OnEnable();
-        }
-        else
-        {
-            return OnDisable();
-        }
+        audioSource.volume = volume;
     }
 
     private void OnSceneLoaded (Scene scene, LoadSceneMode mode)

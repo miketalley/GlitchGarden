@@ -12,10 +12,12 @@ public class LevelManager : MonoBehaviour {
 
     private float currentTimer;
     private bool timedLevelExists = false;
+    private float difficulty;
 
     public void Start()
     {
         ResetLoadLevelTimer();
+        difficulty = PlayerPrefsManager.GetDifficulty();
     }
 
     public void Update()
